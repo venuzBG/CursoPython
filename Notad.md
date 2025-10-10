@@ -86,9 +86,10 @@ Es una operacion que permite combinar dos o mas cadenas para formar una cadena n
 - Uso de operador "+": Es el mas directo para concatenar cadenas.
 - Uso de la funcion join: Nos permite unir cuantas cadenas nosotros necesitemos.
 ej:
-'''Python
+
+``` Python
     " ".join(["cadena1","cadena2","cadena3"]) #"" o " " el espacio entre cadenas.
-'''
+```
 
 ### Formateo de Cadenas
 
@@ -96,15 +97,15 @@ Python ofrece varias formas de formatear cadenas, que incluyen la capacidad de c
 
 - f-string(python3.6+): esta es la opcion mas recomendada, por ser la mas sencilla, rapida y legible.
 
-'''Python
+```  Python
     resultado = f' Hola {variable}.'
-'''
+```
 
 - Metodo format: Es muy versatil y podertoso. Permite construir cadenas muy complejas.
 
-'''Python
+``` Python
     resultado = 'Hola {}'.format(variable)
-'''
+```
 
 ### Metodos de Cadenas
 
@@ -118,10 +119,10 @@ Las cadenas en python vienen con una serie de metodos utiles que facilitan su ma
 
 Es una funcion que contiene python, llamada len(). La funcion len funciona para varios tipos de datos.Cuando se calcula el largo de una cadena se incluye o se toma en cuenta todos los caracteres de una cadena hasta los espacion en blanco, caracteres esceciales, etc.
 
-'''Python
+``` Python
     cadena1 = 'Hola, mundo!'
     longitud = len(cadena1) #Devuelve largo de 12
-'''
+```
 
 ### Subcadenas en python
 
@@ -129,30 +130,30 @@ La subcadena es una parte de una cadena principal, y hay varias maneras de extra
 
 - Extraccion de cadenas:(Slicing): El slicing o segmentacion permite indicar el indice del inicio y el inidce final(sin incluir este ultimo caracter)
 
-'''Python
+``` Python
     subcadena = cadena [inicio:fin]
-'''
+```
 
 - Buscar subcadenas (find): El metodo devuelve el indice de la primera aparicion de la subcadena, pero si no encuentra la subcadena, devuelve -1.
 
-'''Python
+``` Python
     cadenas = 'Hola Mundo"
     posicion = cadena.find("Mundo)
     print(posicion) #imprime 5
-'''
+```
 
 - Reemplazar subcadenas(replace): El metodo reemplaza una subcadena por otra dentro de una cadena principal
 
-'''Python
+``` Python
     cadenas = 'Hola Mundo"
     nueva_cadena = cadena.replace('Mundo','a todos')
     print(nueva_cadena) # 'Hola a todos'
-'''
+```
 
 - Extraer subcadenas por separadores(split): L afuncion split permite dividir una cadena en una lista de subcadenas basadas en un caracter separador.
 
-'''Python
+``` Python
     datos = 'Juan, 30, Mexico"
     lista = datos.split(',')
     print(lista) # ['Juan','30','Mexico']
-'''
+```
