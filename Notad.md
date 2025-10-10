@@ -39,7 +39,7 @@ Python es diferentes que otros lengajes de programacion debido a que no tiene un
 
 ### Cadenas
 
-La cadena o string es el tipo de dato que s eusa para almacenar una secuencia de caracteres, se cierran en comillas dobles o simples. Los caracteres en cuestion puden ser tambien numeros o espacios.
+La cadena o string es el tipo de dato que se usa para almacenar una secuencia de caracteres, se cierran en comillas dobles o simples. Los caracteres en cuestion puden ser tambien numeros o espacios.
 
 Ejemplo:
 
@@ -50,3 +50,16 @@ Ejemplo:
     #Cadena con numeros 
     cadena 2 = "123 456"
 ```
+
+### Detalle de una cadena
+
+Los caracteres de una cadena estan indexados de manera secuencial. Por lo tanto, podemos acceder cada caracter indicando el indice del caracter que queremos recuperar.
+
+Ejemplo:
+
+|   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
+|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+|  "h"  |  "o"  |  "l"  |  "a"  |  ""   |  "m"  |  "u"  |  "n"  |  "d"  |  "o"  |
+
+Para calcular el inidce es el numero de caracteres y espacio(n) menos 1: n-1
+
