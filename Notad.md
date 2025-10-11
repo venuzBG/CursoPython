@@ -157,3 +157,30 @@ La subcadena es una parte de una cadena principal, y hay varias maneras de extra
     lista = datos.split(',')
     print(lista) # ['Juan','30','Mexico']
 ```
+
+### Conversion de tipo de datos
+
+Otra forma de llamarlo es casting, es una tecnica para manipular datos que no estan en el tipo requerido. Podemos hacer conversiones desde y hacia tipos de datos.
+
+- Convertir a entero: funcion int()
+- Convertir a flotante: funcion float()
+- Convertir a cadena: funcion str()
+- Convertir a booleano: funcion bool()
+
+### Entrada de datos por consola
+
+Entrada de datos se realiza usando la funcion imput. Esta funcion pausa el programa y espera a que el usuario ponga algun texto. Una vez que el usuario ponga enter, el texto introducido se vuelve como una cadena (str).
+
+#### Caracteristicas de la funcion imput
+
+- Interactividad: Permite a los usuarios de nuestro programa proporcionar valores dinamicos, en lugar de usar valores estaticos.
+- sencillez: Es sencilla de usar y solo necesita indicar la cadena o mensaje a mostrar al usuario, para que entienda lo que se esta solicitando.
+- Tipo de dato: Siempre devuelve una cadena, si requiere otro tipo de dato hay q convertirlo.
+
+### Generar valores aleatorios
+
+La funcion randint(), que es parte del modulo random, nos permite generar numeros aleatorios. randiant(a,b), devuelve los valores entre a y b, incluyendo los valores a y b. Es importante importarr el modulo random antes de usar la funcion. Para importar el modulo usamos:
+
+``` Python
+    import random
+```
