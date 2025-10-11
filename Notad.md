@@ -113,7 +113,7 @@ Las cadenas en python vienen con una serie de metodos utiles que facilitan su ma
 
 - upper(): Cambia las letras a mayusculas.
 - lower(): Cambia las letras a minusculas.
-- strpi(): Elimina los espacios, al inicio y al final de una cadena.
+- strip(): Elimina los espacios, al inicio y al final de una cadena.
 
 ### Obtener el largo de una cadena
 
@@ -184,3 +184,26 @@ La funcion randint(), que es parte del modulo random, nos permite generar numero
 ``` Python
     import random
 ```
+
+### Operadores en python
+
+Son simbolos especiales que estan diseñados para hacer una operacion en especifico. Tenemos varios tipos:
+
+- Operadores aritmeticos: Permiten realizar calculos matematicos basicos.
+- Operadores de asignacion: Se utilizan para asignar valores a variables.
+- Operadores de comparacion: Se utilizan para comparar un valor con otro.
+- Operadores Logicos: Se utiliza para expresiones condicionales o logicos.
+- Operadores con identidad: Se utilizan para comparar si dos variables son el mismo objeto.
+- Operadores de membresia: Se presenta para probar si una secuencia(ej:subcadena) se presenta en un objeto.
+
+#### Operadores aritmeticos
+
+Para realizar calculos matematicos:
+
+- suma(+)
+- resta(-)
+- multiplicacion(*)
+- division(/)
+- division entera(//): Divide el primer operando con el segundo. El resultado te dara solo la parte entera.
+- modulo(%): Residuo d ela division
+- esponente(**): eleva el primer operador a la segund potencia.
