@@ -3,7 +3,7 @@
 Cuando nosotros creamos una varibale y le asignamos un valor. estamos reservando un espacio de memoria en la ram, entonces la direccion de memoria estara en Hexadecimal y empezara 0x333, "0x" nos dice q esta en hexadecima. Cuando cambiamos el valor de la variable no cambia la direccion d ememoria solo se sobreescribe del valor anterior y sigue teniendo la misma
 direccion de memoria.
 
-## Unidad 1
+## Seccion 3
 
 ### Variables
 
@@ -35,7 +35,7 @@ controlar el flujo del programa
 
 Python es diferentes que otros lengajes de programacion debido a que no tiene una especificacion para definir una contante, por lo que para una buena practica de programacion vamos a usar un convencion que es poner la variable en cuestion en mayusculas y con esto entender que esa variable no debe ser modificada.
 
-## Unidad 2
+## Seccion 4
 
 ### Cadenas
 
@@ -158,6 +158,8 @@ La subcadena es una parte de una cadena principal, y hay varias maneras de extra
     print(lista) # ['Juan','30','Mexico']
 ```
 
+## Seccion 5
+
 ### Conversion de tipo de datos
 
 Otra forma de llamarlo es casting, es una tecnica para manipular datos que no estan en el tipo requerido. Podemos hacer conversiones desde y hacia tipos de datos.
@@ -185,6 +187,8 @@ La funcion randint(), que es parte del modulo random, nos permite generar numero
     import random
 ```
 
+## Seccion 6
+
 ### Operadores en python
 
 Son simbolos especiales que estan diseñados para hacer una operacion en especifico. Tenemos varios tipos:
@@ -207,3 +211,159 @@ Para realizar calculos matematicos:
 - division entera(//): Divide el primer operando con el segundo. El resultado te dara solo la parte entera.
 - modulo(%): Residuo d ela division
 - esponente(**): eleva el primer operador a la segund potencia.
+
+#### Operadores de asignacion
+
+El operador de asignación se usa para asignar un valor a una variable, y se usa el caracter (=) para ello.
+
+Ejemplo:
+
+``` Python
+    variable = valor
+    numero = 10
+```
+
+Python tambien tiene lo que es la asignacion multiple lo que permite asignar valores a varias variables en una misma linea de codigo.
+
+Ejemplo:
+
+``` Python
+    # Sintaxis de asigancion multiple
+    variable 1, variable 2 = valor1, valor 2
+    a,b,c = 1,"carro", 5
+```
+
+Tambien hay asignacion en cadenado en python. Esto permite asgnar el mismo valor a diferentes variables en una
+linea de codigo.
+
+Ejemplo:
+
+``` Python
+    # Sintaxis de asigancion encadenada
+    variable1 + variable 2 + .... =valor
+    # Ejemplo de inicializar contadores
+    contador1 + contador2 = 0
+```
+
+Otra caracteristica es que podemos pedirle al usuario multiples valores de entrada, usamos la funcion
+split(), para que el programa entienda que un espacio es el separdar de una a otra variable.
+
+Ejemplo:
+
+``` Python
+    # Sintaxis de pedir multiples valores de entrada, si dejmaos el split entiende que es un espacio
+    nombre, apellido = input('Ingrese su nombre y apellido: ').split()
+    # Tambien podemos poner dentro de la funcion split cual queremos q sea nuestro separdaor
+    nombre, apellido = input('Ingrese su nombre y apellido: ').split(",")
+```
+
+### Operadores de asignacion compuesto
+
+Los operadores de asignacion compuesto combian una operacion aritmetica con una asiganacion, haciendo las
+operaciones mas conscisas.
+Los operadores pueden ser +=, -=, *=, /=, etc.
+
+Ejemplo:
+
+``` Python
+    # Sintaxis operador asignacion compuesto
+    variable Operador= Valor
+    # Ejemplo 
+    contador = 0
+    contador += 1 # contador = contador + 1
+```
+
+### Operador de Comparacion
+
+Los operadores de comparacion se utiliza para comparar dos valores. El valor siempre es un valor booleano
+'true' o 'false', dependiendo si la condicion se cumple o no.
+
+- Operador de igualdad
+
+``` Python
+    # Sintaxis operador de igualdad ==
+    a == b
+    # Ejemplo 
+    print(5 == 5) #Imprime true
+    print(5 == 3) #Imprime false
+```
+
+- Operador de desigualdad
+
+``` Python
+    # Sintaxis operador de igualdad !=
+    a != b
+    # Ejemplo 
+    print(5 != 6) #Imprime true
+    print(5 != 5) #Imprime false
+```
+
+- Operador menor que(<)
+
+``` Python
+    print(5 < 6) #Imprime true
+    print(5 < 5) #Imprime false
+```
+
+- Operador menor o igual que(<=)
+
+``` Python
+    print(5 <= 6) #Imprime true
+    print(5 <= 4) #Imprime false
+```
+
+- Operador mayor que(>)
+
+``` Python
+    print(5 > 3) #Imprime true
+    print(5 > 7) #Imprime false
+```
+
+- Operador mayor o igual que(>=)
+
+``` Python
+    print(5 >= 3) #Imprime true
+    print(5 >= 7) #Imprime false
+```
+
+### Operadores logicos
+
+Se utilizan para realizar operaciones logicos
+
+- Operador Logico and (y): Devuelve True si ambos operadores son verdaderos, caso contrario siempre sera falso.
+
+``` Python
+    exp1 = False 
+    exp2 = True
+    print(exp1 and exp2) #False
+```
+
+- Operador logico or (o): Devuelve True si cualquiera de los operandos son verdaderos, sino tiene niguna variable verdadero siempre sera falso.
+
+``` Python
+    exp1 = False 
+    exp2 = True
+    print(exp1 or exp2) #True
+```
+
+- Operador logico not (no): Inverte el valor del operado. Es un operador unario.
+
+``` Python
+    exp1 = False 
+    print(not exp1) #True
+```
+
+### Precedencia de Operadores
+
+Determina el orden en que se evaluan las operaciones.
+
+Python aplica las siguiente tabla para asegurar que algunos operadores tengan prioridad sobre otros
+
+1. Operador de parentesis ()
+2. Exponente **
+3. Unarios +x(positivo), -x(negativo)
+4. Multiplicacion, division, modulo *, /, //, %
+5. Suma y Resta +. -
+6. Comparacion ==, !=, <, <=, >, >=
+7. Operadores logicos not, and y or
+8. Operadores de asignacion =, +=, -=, /=, %=, //=, **=
