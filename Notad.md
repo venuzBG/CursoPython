@@ -367,3 +367,122 @@ Python aplica las siguiente tabla para asegurar que algunos operadores tengan pr
 6. Comparacion ==, !=, <, <=, >, >=
 7. Operadores logicos not, and y or
 8. Operadores de asignacion =, +=, -=, /=, %=, //=, **=
+
+``` Python
+    resultado = 5 + 3 * 2 ** 2 # 17
+    resultado = (5 + 3) * 2 ** 2 # 32
+```
+
+## Seccion 7
+
+### Sentencias de decisión
+
+Nos permite controlar el flujo de ejecucion del programa
+
+Las estructuras pueden ser: if, else y elif
+
+- La sentecia if permite ejecutar un bloque de codigo si la condicion a evaluar es verdadera.
+
+Ejemplo:
+
+``` Python
+    # Sintaxis sentencia if
+    if condition:
+        #Bloque de codigo que se
+        #ejecuta si la condicion es TRUE
+        #son importantes la tabulacion
+
+    # Ejemplo
+    edad = 30
+    if edad > = 30
+        print("Eres mayor de edad")
+```
+
+### Diagrama de Flujo
+
+Un diagram de flujo es una representación gráfica de los pasos a ejecutar para lograr un resultado especifico.
+
+Se utilizan simbolos estandarizados para representar distintos tipos de acciones.
+
+1. Circulo o Ovalo: Representa el inicio o fin de un proceso
+2. Rectangulo: Muestra instrucciones o acciones a ejecutar
+3. Rombo o diamante: Indica decisciones, con multiples flujos dependiendo si la respuesta es verdadera o falsa
+4. Flechas: Dirigen el flujo del proceso, mostrando la direccion en que se mueven la secuencia de acciones
+
+Ejercicio:
+
+Dado el siguiente código, vamos a creae su diagrama de flujo equivalente:
+
+- Código
+
+``` Python
+    edad = 30
+    if edad > = 30
+        print("Eres mayor de edad")
+```
+
+- Diarama
+
+![alt text](image.png)
+
+### Sentencia else
+
+La sentencia else se usa para ejecutar un bloque de codigo cuando la sentencia if es falsa
+
+``` Python
+    # Sintaxis sentencia else-if
+    if condition:
+        #Bloque de codigo
+        #si la condicion es verdadera
+    else:
+        #Bloque de codigo
+        #si la condicion es falsa
+    #Ejemplo
+    edad = 30
+    if edad > = 30
+        print("Eres mayor de edad")
+    else:
+        print("Eres menos de edad")
+```
+
+- Diagrama
+![alt text](image-1.png)
+
+### Sentecia if elif else
+
+La sentencia elif es una abreviatura de else-if, y se utiliza cuando necesitemos verificar multiples condiciones, una tras otra. Se pude crear cuantas elif necesitemos.
+
+``` Python
+    # Sintaxis sentencia else-if
+    if condition1:
+        #Bloque de codigo
+    elif condition2:
+        #Bloque de codigo
+    else:
+        #Bloque de codigo
+    #Ejemplo
+    edad = 30
+    if edad > = 18
+        print("Eres mayor de edad")
+    elif 13 <= edad < 18
+        print('Eres un adolescente')
+    else:
+        print("Eres un niñ@")
+```
+
+### Operador ternario
+
+Es una funcion compacta de agregar una condicion y el objetivo es asignar un valor a una variable dependiendo
+del valor de la condicion.
+
+``` Python
+    # Sintaxis operador ternario
+    resultado = valor_si_verdadero if condition else valor_si_falso
+    # Ejemplo
+    edad = 18
+    es_adulto = 'Si' if edad >= 18 else 'No'
+    print(es_adulto)
+    
+```
+
+Video 100
