@@ -7,7 +7,7 @@ direccion de memoria.
 
 ### Variables
 
-1. Al crear una variable esta en memoria y le valor es un objeto, entonces cuando sobreescribre no es que borra el nuevo valor sino que se crea un nuevo
+1. Al crear una variable esta en memoria y el valor es un objeto, entonces cuando sobreescribre no es que borra el nuevo valor sino que se crea un nuevo
 objeto y ahora apunta a ese nuevo valor.
 
 2. si quieres que un valor en python sea un numero que no lo vas a usar para sumar,etc. Sino que funcione com string lo pones entre comillas.
@@ -22,10 +22,10 @@ objeto y ahora apunta a ese nuevo valor.
 
 ### Tipos de datos
 
-Python es dinamico por lo que no necesitamos indoicar que tipo de variables son.
+Python es dinamico por lo que no necesitamos indicar que tipo de variables son.
 
 1. Numero int: Numeros enteros.
-2. Numero con punto flñotante(float): Numeros con coma.
+2. Numero con punto flotante(float): Numeros con coma.
 3. Cadena de texto: Cadena de letras o caracteres.
 4. Booleanos: Almacenan un valor logico, verdadero o falso, y lo usaremos para
 controlar el flujo del programa
@@ -33,7 +33,7 @@ controlar el flujo del programa
 
 ### Constantes
 
-Python es diferentes que otros lengajes de programacion debido a que no tiene una especificacion para definir una contante, por lo que para una buena practica de programacion vamos a usar un convencion que es poner la variable en cuestion en mayusculas y con esto entender que esa variable no debe ser modificada.
+Python es diferentes que otros lengajes de programacion debido a que no tiene una especificacion para definir una contante, por lo que para una buena practica de programacion vamos a usar una convencion que es poner la variable en cuestion en mayusculas y con esto entender que esa variable no debe ser modificada.
 
 ## Seccion 4
 
@@ -138,7 +138,7 @@ La subcadena es una parte de una cadena principal, y hay varias maneras de extra
 
 ``` Python
     cadenas = 'Hola Mundo"
-    posicion = cadena.find("Mundo)
+    posicion = cadena.find("Mundo")
     print(posicion) #imprime 5
 ```
 
@@ -229,7 +229,7 @@ Ejemplo:
 
 ``` Python
     # Sintaxis de asigancion multiple
-    variable 1, variable 2 = valor1, valor 2
+    variable 1, variable 2 = valor 1, valor 2
     a,b,c = 1,"carro", 5
 ```
 
