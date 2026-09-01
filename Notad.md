@@ -485,4 +485,68 @@ del valor de la condicion.
     
 ```
 
-Video 100
+## Seccion 8
+
+### Ciclos
+
+Son estructuras de control que va a repetir una serie de instrucciones hasta que se cumpla una condicion
+especifica. Solo hay dos estrcuturas de ciclos For y While.
+
+#### Ciclo While
+
+Repite una serie de intrucciones mientras la condicion sea verdadera.
+
+``` Python
+    # Sintaxis de bucle while
+    while condicion:
+        # Bloque de codigo a ejecutar
+
+    # Ejemplo de imprimir del 1 al 3
+    contador = 1
+    while contador <= 3:
+        print(contador)
+        contador +=1
+```
+
+### Ciclo For
+
+En el ciclo for itera o recorre una secuencia de valores, por ejemplo los caracteres de una cadena, una lista, etc.
+Y ejecuta un bloque de codigo por cada elemento de la secuencia.
+
+``` Python
+    # Sintaxis de bucle while
+    for variable in secuencia:
+        # Bloque de codigo a ejecutar
+
+    # Ejemplo de imprimir del 1 al 3
+    secuencia = "Hola Mundo"
+    for letra, in cadena:
+        print(letra, end = " ")
+```
+
+### Funcion de range en python
+
+Es una funcion incorporada que genera una funcion de números. Es utilizada muy comunmente para iterar numeros
+con el ciclo for. Es importante aclarar que si no se pone un valor inicial empezara desde 0 por defecto. El incremento
+en cambio tiene por defecto 1.
+
+``` Python
+    # Sintaxis de funcion range
+    # Inicio - valor inicial (opcional)
+    # Fin - valoe final, sin uncluirlo (eso significa que si dices que el fin es 5 va del 0 al 4, osea menor al fin)
+    # Incremento - diferencia entre cada numero(opcional)
+    range(inicio, fin, incremento)
+```
+
+``` Python
+    # Imprimir los numeros del 0 al 4
+    for i in range(5):
+        print(i)
+    
+    # usar range para imprimir del 0 al 9
+    # que vaya incrementando en 2
+    for i in range(0, 10, 2):
+        print(i)
+```
+
+### Palabra break y continue
