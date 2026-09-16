@@ -18,8 +18,6 @@ objeto y ahora apunta a ese nuevo valor.
 
 2. Los nombres deben ser descriptivos no usar solo una letra sino un nombre
 
-3. Evitar nombres de un solo caracter.
-
 ### Tipos de datos
 
 Python es dinamico por lo que no necesitamos indicar que tipo de variables son.
@@ -550,3 +548,365 @@ en cambio tiene por defecto 1.
 ```
 
 ### Palabra break y continue
+
+Break sirve para salir de bucle inmediatamente, Continue en cambio sirve para que pase a la siguiente iteracion desde ese punto.
+
+Ejemplo:
+
+``` Python
+    # Ejemplo break
+    print("Palabra break: ")
+
+    for numero in range(1,10):
+        if numero % 2 == 0:
+            print(numero)
+            break  # Salimos del ciclo inmediatamente
+
+    # Ejemplo de continue
+
+    print("\n\nPalabra continue: ")
+    for numero in range(1,10):
+        if numero % 2 == 1:
+            continue # si llega a esta linea va a la siguiente iteracion desde ese punto
+        print(numero)
+```
+
+## Seccion 9
+
+### Coleccion en python
+
+Una coleccion es un conjunto de datos. En python tenemos varios tiposque podemos utilizar con el objetivo de
+almacenar, organizar y manipular multiples conjunto de datos.
+Los tipos de datos que vamos a estudiar son:
+    - listas
+    - tuplas
+    - set(Conjunto)
+    - Diccionarios
+Estos son los mas comunes y mas usados.
+
+#### Listas en python
+
+Las listas son colecciones ordenadas y mutables(se puede modificar) de elementos que pueden ser diferentes tipos.
+Las listas son dinamicas, lo que significa que pueden cambiar de tamaño, podemos añadir, modificar o elminar elementos.
+La lista va a tener un indice que empieza desde el 0.
+
+``` Python
+    # Sintaxis de una lista
+    lista = [elemento1, elemto2, etc]
+
+    # Ejemplos de listas
+    numeros = [1,2,3,5]
+    frutas = ["Manzana", "Peras"]
+    mixta = ["Dado", 12, 13, [2,4]] #una lista puede contener a otra lista
+
+```
+
+### Formas de modificar elementos de una lista
+
+#### 1. Modificar un elemento por su indice
+
+Se asigna un nuevo valor al indice que se desea cambiar. El indice debe existir; de lo contrario, Python genera un error `IndexError`.
+
+```python
+frutas[1] = "naranja"
+print(frutas)  # ["manzana", "naranja", "uva"]
+```
+
+Tambien se puede usar un indice negativo:
+
+```python
+    frutas[-1] = "mango"
+```
+
+#### 2. Agregar un elemento al final con `append()`
+
+`append()` agrega un solo elemento al final de la lista y modifica la lista original.
+
+```python
+    frutas.append("melon")
+    print(frutas)
+```
+
+#### 3. Insertar un elemento en una posicion con `insert()`
+
+`insert(indice, elemento)` agrega un elemento en la posicion indicada. Los elementos que estaban desde esa posicion se desplazan a la derecha.
+
+```python
+frutas.insert(1, "kiwi")
+print(frutas)
+```
+
+#### 4. Reemplazar varios elementos con cortes
+
+La asignacion mediante un corte permite sustituir un grupo de elementos. El indice final no se incluye.
+
+```python
+numeros = [1, 2, 3, 4, 5]
+numeros[1:3] = [20, 30]
+print(numeros)  # [1, 20, 30, 4, 5]
+```
+
+El reemplazo puede tener una cantidad diferente de elementos, por lo que tambien permite eliminar o insertar varios valores:
+
+```python
+    numeros = [1, 2, 3, 4, 5]
+    numeros[1:3] = [200]
+    print(numeros)  # [1, 200, 4, 5]
+```
+
+#### 5. Eliminar por valor con `remove()`
+
+`remove(valor)` elimina la primera coincidencia del valor indicado. Si el valor no existe, Python genera un error `ValueError`.
+
+```python
+frutas.remove("kiwi")
+```
+
+#### 6. Eliminar por indice con `pop()`
+
+`pop(indice)` hace dos cosas: elimina el elemento de la posicion indicada y devuelve ese elemento como resultado. "Devolver" significa que podemos guardar el elemento eliminado en una variable y utilizarlo despues. Si no se proporciona un indice, elimina y devuelve el ultimo elemento.
+
+```python
+frutas = ["manzana", "pera", "uva"]
+fruta_eliminada = frutas.pop(1)
+
+print(fruta_eliminada)  # pera
+print(frutas)           # ["manzana", "uva"]
+```
+
+Tambien podemos usar `pop()` sin indice para quitar el ultimo elemento:
+
+```python
+ultima_fruta = frutas.pop()
+print(ultima_fruta)  # uva
+```
+
+#### 7. Eliminar con `del`
+
+`del` elimina un elemento por indice o un grupo de elementos mediante un corte, pero no devuelve el valor eliminado. Por eso se usa cuando solo necesitamos quitar el elemento y no necesitamos guardarlo.
+
+```python
+frutas = ["manzana", "pera", "uva"]
+del frutas[0]     # elimina el primer elemento
+print(frutas)     # ["pera", "uva"]
+```
+
+La diferencia principal se puede resumir asi:
+
+```python
+frutas = ["manzana", "pera", "uva"]
+
+fruta = frutas.pop(1)  # elimina "pera" y permite guardarla en una variable
+del frutas[0]          # elimina "manzana", pero no podemos recuperar su valor
+```
+
+`pop()` es util cuando necesitamos trabajar con el elemento eliminado. `del` es util cuando solo queremos eliminarlo. `del` tambien permite eliminar varios elementos usando un corte:
+
+```python
+del frutas[0:2]  # elimina los indices 0 y 1
+```
+
+#### 8. Vaciar toda la lista con `clear()`
+
+`clear()` elimina todos los elementos, pero conserva la lista para poder usarla nuevamente.
+
+```python
+frutas.clear()
+print(frutas)  # []
+```
+
+### Resumen rapido
+
+| Operacion | Uso | Resultado |
+| ----------- | ----- | ----------- |
+| Cambiar un valor | `lista[indice] = valor` | Reemplaza un elemento |
+| Agregar al final | `lista.append(valor)` | Anade un elemento |
+| Insertar | `lista.insert(indice, valor)` | Agrega y desplaza elementos |
+| Reemplazar varios | `lista[inicio:fin] = valores` | Sustituye un grupo |
+| Eliminar por valor | `lista.remove(valor)` | Elimina la primera coincidencia |
+| Eliminar por indice | `lista.pop(indice)` | Elimina y devuelve un elemento |
+| Eliminar con indice o corte | `del lista[indice]` | Elimina sin devolverlo |
+| Vaciar | `lista.clear()` | Deja la lista vacia |
+
+1. Evitar nombres de un solo caracter.
+
+### Tuplas
+
+Las tuplas son similares a las listas, con la diferencia que los elementos que contendra no se podran modificar, eliminar
+ni aumentar despues de haberla creada. Por esta razon solo se las crea para colecciones de datos que no pueden cambiar con
+el tiempo.
+
+```python
+    # Sintaxis
+    mytupla = (elemento1, elemento2, elemento3)
+    mytupla2 = elemento1, elemento2, elemento3
+
+    # Ejemplos
+    tupla_numeros = (1, 2, 3, 4)
+    tupla_mixta = ("manzana", 10, 3.14, [1,3,4])
+    tupla_sin_parentesis = "Juan", "Carla"
+    tupla_un_elemento = 10, # Es necesario la coma si es un solo elemento sino se interpretara como un numero 
+```
+
+### Desempaquetado de tuplas
+
+El desempaquetado permite asignar cada elemento de una tupla a una variable diferente en una sola linea.
+
+```python
+datos = ("Ana", 25)
+nombre, edad = datos
+
+print(nombre)  # Ana
+print(edad)    # 25
+```
+
+### Sets en Python
+
+Un set es una coleccion de datos que no permite elementos repetidos y no esta ordenada. Esto significa que sus elementos no tienen una posicion fija y Python no garantiza el orden en que se mostraran.
+
+```python
+    #Sintaxis
+    mi_set = {elemento 1, elemento 2, elemento 4}
+```
+
+```python
+    set_a = {1,2,3,4}
+    set_b = {3, "Juan", True, 6.5}
+    frutas = {"manzana", "pera", "manzana"}
+    print(frutas)  # {'manzana', 'pera'}
+```
+
+Para comprobar si un elemento pertenece a un set usamos `in`:
+
+```python
+mi_set = {2, 4, 6, 8}
+print(6 in mi_set)  # True
+```
+
+### Operaciones con sets
+
+- **Union (`|`)**: combina los elementos de dos sets sin repetirlos.
+- **Interseccion (`&`)**: obtiene los elementos que existen en ambos sets.
+- **Diferencia (`-`)**: obtiene los elementos del primer set que no estan en el segundo.
+
+```python
+set_a = {1, 2, 3}
+set_b = {3, 4, 5}
+
+print(set_a | set_b)  # {1, 2, 3, 4, 5}
+print(set_a & set_b)  # {3}
+print(set_a - set_b)  # {1, 2}
+```
+
+### Diccionarios en Python
+
+Un diccionario es una coleccion de datos que guarda informacion en pares de **clave y valor**. La clave identifica el dato y debe ser unica. Desde la version 3.7 de python ya son ordenadas los diccionarios antes de esa version no lo era.
+
+#### Sintaxis
+
+```python
+diccionario = {clave: valor, clave2: valor2}
+```
+
+#### Ejemplo
+
+```python
+persona = {"nombre": "Ana", "edad": 25}
+print(persona["nombre"])  # Ana
+```
+
+#### Acceder a los elementos de un diccionario
+
+Para obtener un valor de un diccionario se usa la clave entre corchetes.
+
+```python
+persona = {"nombre": "Ana", "edad": 25}
+
+print(persona["nombre"])  # Ana
+print(persona["edad"])    # 25
+```
+
+En este ejemplo, `"nombre"` y `"edad"` son las claves. Cuando escribimos `persona["nombre"]`, Python busca esa clave dentro del diccionario y devuelve su valor asociado. Si la clave no existe, Python lanza un error `KeyError`.
+
+Otra forma de acceder a un valor es con `get()`, que es más seguro porque si la clave no existe, devuelve `None` en lugar de dar un error.
+
+```python
+persona = {"nombre": "Ana", "edad": 25}
+
+print(persona.get("nombre"))  # Ana
+print(persona.get("pais"))    # None
+```
+
+Esto es útil cuando no sabemos si una clave existe antes de usarla.
+
+#### Modificar valores dentro de un diccionario
+
+Los diccionarios son mutables, es decir, podemos cambiar sus valores después de crearlos.
+
+```python
+persona = {"nombre": "Ana", "edad": 25}
+
+persona["edad"] = 30
+print(persona)  # {'nombre': 'Ana', 'edad': 30}
+```
+
+Aquí estamos accediendo a la clave `"edad"` y le asignamos un nuevo valor. Esto cambia el contenido del diccionario sin necesidad de crear uno nuevo.
+
+#### Agregar nuevos elementos
+
+También podemos agregar pares clave-valor nuevos al diccionario.
+
+```python
+persona = {"nombre": "Ana", "edad": 25}
+
+persona["pais"] = "Mexico"
+print(persona)  # {'nombre': 'Ana', 'edad': 25, 'pais': 'Mexico'}
+```
+
+Cuando se usa una clave que todavía no existe, Python la crea automáticamente y le asigna el valor que se indica.
+
+#### Eliminar elementos
+
+Podemos eliminar elementos con `del` o con `pop()`.
+
+```python
+persona = {"nombre": "Ana", "edad": 25, "pais": "Mexico"}
+
+del persona["pais"]
+print(persona)  # {'nombre': 'Ana', 'edad': 25}
+
+persona.pop("edad")
+print(persona)  # {'nombre': 'Ana'}
+```
+
+- `del` elimina directamente la clave indicada.
+- `pop()` elimina la clave y además devuelve el valor eliminado, por si queremos guardarlo en otra variable.
+
+#### Recorrer un diccionario
+
+Para leer todos los datos del diccionario, podemos iterar sobre sus claves, valores o ambos.
+
+```python
+persona = {"nombre": "Ana", "edad": 25, "pais": "Mexico"}
+
+for clave, valor in persona.items():
+    print(clave, valor)
+```
+
+La función `items()` devuelve cada par clave-valor, por lo que podemos acceder a ambos en cada iteración.
+
+```python
+for valor in persona.values():
+    print(valor)
+```
+
+Con `values()` solo obtenemos los valores.
+
+```python
+for clave in persona.keys():
+    print(clave)
+```
+
+Con `keys()` solo obtenemos las claves.
+
+En resumen, acceder y modificar diccionarios consiste en usar las claves para leer o actualizar información, y cuando queremos agregar nuevos datos solo necesitamos asignar una nueva clave con su valor. Esto hace que los diccionarios sean muy útiles para manejar datos estructurados como información de personas, productos, usuarios o configuraciones.
