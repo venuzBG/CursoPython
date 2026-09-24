@@ -910,3 +910,223 @@ for clave in persona.keys():
 Con `keys()` solo obtenemos las claves.
 
 En resumen, acceder y modificar diccionarios consiste en usar las claves para leer o actualizar información, y cuando queremos agregar nuevos datos solo necesitamos asignar una nueva clave con su valor. Esto hace que los diccionarios sean muy útiles para manejar datos estructurados como información de personas, productos, usuarios o configuraciones.
+
+## Seccion 10
+
+### Funcion en python
+
+Una función en Python es un bloque de código reutilizable que nos permite organizar tareas y ejecutar la misma lógica varias veces sin repetir código. La sintaxis básica es:
+
+```python
+def nombre_funcion(parametro1, parametro2):
+    resultado = parametro1 + parametro2
+    return resultado
+```
+
+En este ejemplo, la función recibe dos parámetros, los suma y devuelve el resultado con `return`.
+
+```python
+def sumar(a, b):
+    resultado = a + b
+    return resultado
+
+print(sumar(5, 3))
+```
+
+Para mandar a llamar la función, solo se escribe el nombre y se pasan los valores que se desean usar:
+
+```python
+valor = sumar(10, 7)
+print(valor)
+```
+
+En resumen, una función ayuda a crear código más limpio, ordenado y reutilizable. Se define con `def`, puede recibir parámetros, hacer operaciones y devolver un valor con `return`.
+
+### Manejo de parámetros en una función
+
+Los parámetros son los valores que una función recibe cuando la ejecutamos. Sirven para que la función trabaje con información distinta cada vez que la llamamos.
+
+```python
+def sumar(a, b):
+    resultado = a + b
+    return resultado
+
+print(sumar(5, 3))
+```
+
+En este ejemplo, `a` y `b` son los parámetros de la función. Cuando llamamos `sumar(5, 3)`, esos valores se asignan a `a` y `b`. Luego la función realiza la operación y devuelve el resultado.
+
+También puedes indicar el tipo de dato que espera cada parámetro usando dos puntos `:` junto al nombre del parámetro. Esto se llama anotación de tipos y ayuda a documentar y aclarar cómo debe usarse la función.
+
+```python
+def sumar(a: int, b: int) -> int:
+    resultado = a + b
+    return resultado
+```
+
+En este caso, `a` y `b` deben ser enteros, y la función devuelve un entero. Python no fuerza este tipo de forma estricta en tiempo de ejecución, pero sí ayuda a que el código sea más claro y a detectar errores antes con herramientas o editores.
+
+### ¿Qué hace `return`?
+
+`return` sirve para devolver un valor desde una función y enviarlo de regreso al lugar donde la llamamos. Sin `return`, la función puede ejecutar instrucciones, pero no entrega un resultado útil al exterior.
+
+```python
+def sumar(a, b):
+    resultado = a + b
+    return resultado
+
+print(sumar(5, 3))
+```
+
+Cuando ejecutamos `sumar(5, 3)`, Python hace lo siguiente:
+
+1. recibe `a = 5` y `b = 3`
+2. calcula `resultado = 8`
+3. `return resultado` devuelve `8`
+4. `print(...)` muestra `8` en pantalla
+
+Si no usamos `return`, la función no devuelve nada, y el valor solo se queda dentro de la función.
+
+```python
+def saludar():
+    print("Hola")
+
+saludar()  # imprime "Hola"
+```
+
+Aquí no hay `return`, así que la función solo muestra información, pero no devuelve un valor que se pueda guardar o usar después.
+
+### ¿Por qué a veces se usa `return 0`?
+
+No siempre `return 0` significa “el resultado de la operación es cero”. En muchos casos, `0` se usa como una señal de que la función terminó correctamente o que algo salió bien.
+
+```python
+def validar_edad(edad):
+    if edad >= 18:
+        return 1
+    else:
+        return 0
+```
+
+En este ejemplo, `1` y `0` no son el resultado matemático, sino indicadores: `1` puede significar “verdadero” o “éxito”, y `0` puede significar “falso” o “fallo”.
+
+### Diferencia entre `print()` y `return`
+
+- `print()` muestra el resultado en pantalla.
+- `return` devuelve el resultado para poder usarlo después.
+
+```python
+def sumar(a, b):
+    return a + b
+
+resultado = sumar(10, 7)
+print(resultado)  # 17
+```
+
+En resumen, `return` es lo que permite que una función entregue un valor usable fuera de ella. Si solo queremos mostrar algo en consola, usamos `print()`. Si queremos reutilizar el resultado en otra parte del programa, usamos `return`.
+
+### Alcance de los parámetros
+
+Los parámetros y las variables creadas dentro de una función tienen un ámbito local, es decir, solo existen mientras la función está ejecutándose.
+
+Esto ocurre porque `resultado` solo existe dentro de la función. Fuera de ella, no se puede acceder a esa variable.
+
+### ¿Por qué se eliminan de la memoria?
+
+Python trabaja con un sistema de memoria en el que las variables locales de una función se crean mientras se ejecuta la función y se eliminan cuando termina. Esto sucede porque después de que la función finaliza, ya no hace falta guardar esos valores, ya que la función ha terminado su trabajo.
+
+```python
+def saludar(nombre):
+    mensaje = "Hola, " + nombre
+    print(mensaje)
+
+saludar("Ana")
+```
+
+Aquí, `nombre` y `mensaje` existen solo durante la ejecución de `saludar()`. Cuando la función termina, esos datos desaparecen de la memoria.
+
+En resumen, los parámetros permiten enviar información a una función, pero solo tienen sentido dentro de ella. Cuando la función termina, sus variables locales se eliminan para ahorrar memoria y mantener el programa organizado.
+
+### Módulos en Python
+
+Un módulo es un archivo Python que contiene funciones, variables o clases que pueden reutilizarse en otros archivos. Esto permite organizar el código y dividirlo en partes más pequeñas y manejables.
+
+Por ejemplo, si creamos un archivo llamado `modulos_funcion.py` con esta función:
+
+```python
+# modulos_funcion.py
+
+def sumar(a, b):
+    resultado_suma = a + b
+    return resultado_suma
+```
+
+Entonces, desde otro archivo podemos usar esa función sin copiar el código.
+
+#### Importar funciones desde otro archivo
+
+La forma más común es usando `from` e `import`:
+
+```python
+from modulos_funcion import sumar
+
+print(sumar(8, 7))
+```
+
+Esto significa: “trae la función `sumar` del archivo `modulos_funcion.py` y úsala aquí”.
+
+También se puede importar todo el módulo completo:
+
+```python
+import modulos_funcion
+
+print(modulos_funcion.sumar(8, 7))
+```
+
+En este caso, se importa el archivo completo y luego se accede a la función con `modulos_funcion.sumar(...)`.
+
+### ¿Qué significa `if __name__ == "__main__"`?
+
+Esta línea sirve para saber si el archivo se está ejecutando directamente o si está siendo importado desde otro archivo.
+
+```python
+if __name__ == "__main__":
+    print("Funcion sumar")
+    print(f"Resultado funcion sumar desde el modulo: {sumar(8, 7)}")
+```
+
+#### ¿Cuándo se usa?
+
+- Cuando el archivo se ejecuta directamente, por ejemplo: `python modulos_funcion.py`
+- entonces `__name__` vale `"__main__"`
+- por eso se ejecuta el bloque que está dentro del `if`
+
+#### ¿Por qué sirve?
+
+Porque permite diferenciar entre dos escenarios:
+
+1. el archivo se ejecuta por sí solo
+2. el archivo se importa en otro archivo
+
+Si un archivo se importa desde otro, `__name__` no será `"__main__"`, sino el nombre del archivo, y ese bloque no se ejecutará automáticamente.
+
+Esto es útil porque te permite poner código de prueba dentro del mismo archivo sin que se ejecute cada vez que lo importas.
+
+Ejemplo completo:
+
+```python
+# modulos_funcion.py
+
+def sumar(a, b):
+    resultado_suma = a + b
+    return resultado_suma
+
+
+if __name__ == "__main__":
+    print("Funcion sumar")
+    print(f"Resultado funcion sumar desde el modulo: {sumar(8, 7)}")
+```
+
+Cuando ejecutas este archivo directamente, se imprime la prueba. Pero si lo importas desde otro archivo con `from modulos_funcion import sumar`, ese bloque no se ejecuta automáticamente, porque no es el archivo principal.
+
+En resumen, un módulo ayuda a reutilizar funciones y organizar mejor el código. `if __name__ == "__main__"` sirve para ejecutar solo cierto código cuando el archivo se corre directamente, y `from ... import ...` permite traer funciones de otro archivo para usarlas en el actual.
